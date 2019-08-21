@@ -104,79 +104,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/scss/_styles.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\assets\\Insanibu.eot":[["Insanibu.6f681545.eot","src/assets/Insanibu.eot"],"src/assets/Insanibu.eot"],"./..\\assets\\Insanibu.woff2":[["Insanibu.627b0d79.woff2","src/assets/Insanibu.woff2"],"src/assets/Insanibu.woff2"],"./..\\assets\\Insanibu.woff":[["Insanibu.078f13dd.woff","src/assets/Insanibu.woff"],"src/assets/Insanibu.woff"],"./..\\assets\\Insanibu.ttf":[["Insanibu.2ad38961.ttf","src/assets/Insanibu.ttf"],"src/assets/Insanibu.ttf"],"./..\\assets\\Insanibu.svg":[["Insanibu.38c5ccfe.svg","src/assets/Insanibu.svg"],"src/assets/Insanibu.svg"],"./..\\assets\\hidden.png":[["hidden.9f30ee46.png","src/assets/hidden.png"],"src/assets/hidden.png"],"./..\\assets\\logo.png":[["logo.8244f1f8.png","src/assets/logo.png"],"src/assets/logo.png"],"_css_loader":"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -18027,7 +17955,79 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     value: true
   });
 });
-},{"jquery":"node_modules/jquery/dist/jquery.js","popper.js":"node_modules/popper.js/dist/esm/popper.js"}],"src/js/Preloader.js":[function(require,module,exports) {
+},{"jquery":"node_modules/jquery/dist/jquery.js","popper.js":"node_modules/popper.js/dist/esm/popper.js"}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/scss/_styles.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\assets\\Insanibu.eot":[["Insanibu.6f681545.eot","src/assets/Insanibu.eot"],"src/assets/Insanibu.eot"],"./..\\assets\\Insanibu.woff2":[["Insanibu.627b0d79.woff2","src/assets/Insanibu.woff2"],"src/assets/Insanibu.woff2"],"./..\\assets\\Insanibu.woff":[["Insanibu.078f13dd.woff","src/assets/Insanibu.woff"],"src/assets/Insanibu.woff"],"./..\\assets\\Insanibu.ttf":[["Insanibu.2ad38961.ttf","src/assets/Insanibu.ttf"],"src/assets/Insanibu.ttf"],"./..\\assets\\Insanibu.svg":[["Insanibu.38c5ccfe.svg","src/assets/Insanibu.svg"],"src/assets/Insanibu.svg"],"./..\\assets\\hidden.png":[["hidden.9f30ee46.png","src/assets/hidden.png"],"src/assets/hidden.png"],"_css_loader":"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/js/Preloader.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22147,164 +22147,174 @@ exports.tns = tns;
 },{"./helpers/Object.keys":"node_modules/tiny-slider/src/helpers/Object.keys.js","./helpers/childNode.remove":"node_modules/tiny-slider/src/helpers/childNode.remove.js","./helpers/raf.js":"node_modules/tiny-slider/src/helpers/raf.js","./helpers/caf.js":"node_modules/tiny-slider/src/helpers/caf.js","./helpers/extend.js":"node_modules/tiny-slider/src/helpers/extend.js","./helpers/checkStorageValue.js":"node_modules/tiny-slider/src/helpers/checkStorageValue.js","./helpers/setLocalStorage.js":"node_modules/tiny-slider/src/helpers/setLocalStorage.js","./helpers/getSlideId.js":"node_modules/tiny-slider/src/helpers/getSlideId.js","./helpers/calc.js":"node_modules/tiny-slider/src/helpers/calc.js","./helpers/percentageLayout.js":"node_modules/tiny-slider/src/helpers/percentageLayout.js","./helpers/mediaquerySupport.js":"node_modules/tiny-slider/src/helpers/mediaquerySupport.js","./helpers/createStyleSheet.js":"node_modules/tiny-slider/src/helpers/createStyleSheet.js","./helpers/addCSSRule.js":"node_modules/tiny-slider/src/helpers/addCSSRule.js","./helpers/removeCSSRule.js":"node_modules/tiny-slider/src/helpers/removeCSSRule.js","./helpers/getCssRulesLength.js":"node_modules/tiny-slider/src/helpers/getCssRulesLength.js","./helpers/toDegree.js":"node_modules/tiny-slider/src/helpers/toDegree.js","./helpers/getTouchDirection.js":"node_modules/tiny-slider/src/helpers/getTouchDirection.js","./helpers/forEach.js":"node_modules/tiny-slider/src/helpers/forEach.js","./helpers/hasClass.js":"node_modules/tiny-slider/src/helpers/hasClass.js","./helpers/addClass.js":"node_modules/tiny-slider/src/helpers/addClass.js","./helpers/removeClass.js":"node_modules/tiny-slider/src/helpers/removeClass.js","./helpers/hasAttr.js":"node_modules/tiny-slider/src/helpers/hasAttr.js","./helpers/getAttr.js":"node_modules/tiny-slider/src/helpers/getAttr.js","./helpers/setAttrs.js":"node_modules/tiny-slider/src/helpers/setAttrs.js","./helpers/removeAttrs.js":"node_modules/tiny-slider/src/helpers/removeAttrs.js","./helpers/arrayFromNodeList.js":"node_modules/tiny-slider/src/helpers/arrayFromNodeList.js","./helpers/hideElement.js":"node_modules/tiny-slider/src/helpers/hideElement.js","./helpers/showElement.js":"node_modules/tiny-slider/src/helpers/showElement.js","./helpers/isVisible.js":"node_modules/tiny-slider/src/helpers/isVisible.js","./helpers/whichProperty.js":"node_modules/tiny-slider/src/helpers/whichProperty.js","./helpers/has3DTransforms.js":"node_modules/tiny-slider/src/helpers/has3DTransforms.js","./helpers/getEndProperty.js":"node_modules/tiny-slider/src/helpers/getEndProperty.js","./helpers/addEvents.js":"node_modules/tiny-slider/src/helpers/addEvents.js","./helpers/removeEvents.js":"node_modules/tiny-slider/src/helpers/removeEvents.js","./helpers/events.js":"node_modules/tiny-slider/src/helpers/events.js","./helpers/jsTransform.js":"node_modules/tiny-slider/src/helpers/jsTransform.js"}],"src/js/StreetfoodTinySlider.js":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 var _tinySlider = require("../../node_modules/tiny-slider/src/tiny-slider");
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-// init tiny-slider
-var fullpageSlider = (0, _tinySlider.tns)({
-  container: '#fullpage',
-  items: 1,
-  slideBy: 'page',
-  axis: 'vertical',
-  loop: false,
-  viewportMax: true,
-  controlsText: ['<span>PRE</span>', '<span>NEX</span>'],
-  speed: 400,
-  arrowKeys: true,
-  mouseDrag: true,
-  preventActionWhenRunning: true,
-  controls: false,
-  preventScrollOnTouch: 'auto'
-});
-module.exports.fullpageSlider = fullpageSlider;
-var foodSlider = (0, _tinySlider.tns)({
-  container: '.food-slide',
-  items: 1,
-  slideBy: 'page',
-  loop: true,
-  viewportMax: true,
-  controlsText: ['{', '}'],
-  speed: 400,
-  arrowKeys: true,
-  mouseDrag: true,
-  preventActionWhenRunning: true,
-  controls: false,
-  preventScrollOnTouch: 'auto',
-  responsive: {
-    768: {
-      loop: false
-    }
-  }
-});
-module.exports.foodSlider = fullpageSlider; // selection
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var getHeader = document.querySelector('.header');
-var getFooter = document.querySelector('.footer');
-var getSection = document.querySelectorAll('#fullpage section'); // wheel event 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-document.addEventListener('wheel', function (e) {
-  // slider info
-  var pageInfo = fullpageSlider.getInfo(),
-      pageIndexPrev = pageInfo.indexCached,
-      pageIndexCurrent = pageInfo.index;
-  var foodInfo = foodSlider.getInfo(),
-      foodIndexPrev = foodInfo.indexCached,
-      foodIndexCurrent = foodInfo.index,
-      foodTotalPages = foodInfo.pages; // wheel scroll interaction
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  if (e.deltaY > 0 && !slideTransition) {
-    if (pageIndexCurrent == 1 && foodIndexCurrent <= foodTotalPages - 1) {
-      foodSlider.goTo('next');
-    } else {
-      fullpageSlider.goTo('next');
-    }
-  } else {
-    if (pageIndexCurrent == 1 && foodIndexCurrent > 1) {
-      foodSlider.goTo(0);
-    } else {
-      fullpageSlider.goTo('prev');
-    }
-  } // easterEgg: body background updates
-  // if (pageIndexCurrent > 2) {
-  //   update_background('goldenrod');
-  // } else if (pageIndexCurrent < 2) {
-  //   update_background('blue');
-  // }
+var StreetfoodTinySlider =
+/*#__PURE__*/
+function () {
+  function StreetfoodTinySlider() {
+    _classCallCheck(this, StreetfoodTinySlider);
 
-}); // onload
+    // selection
+    var getHeader = document.querySelector('.header');
+    var getFooter = document.querySelector('.footer');
+    var getSection = document.querySelectorAll('#fullpage section'); // RUN SLIDERS (FOR DESKTOP)
 
-window.addEventListener('load', function (e) {
-  var fullpageCurrentIndex = fullpageSlider.getInfo().index;
-  update_elements_class(fullpageCurrentIndex);
-}); // update header,footer,section classes
+    run_tiny_slider(); // HELPER FUNCTIONS FOR SLIDER ELEMENT CLASS UPDATE
+    // update_elements_class - update classes according to slider-index
 
-fullpageSlider.events.on('indexChanged', function (e) {
-  var fullpageCurrentIndex = e.index;
-  update_elements_class(fullpageCurrentIndex);
-});
-
-function update_elements_class(fullpageCurrentIndex) {
-  getSection.forEach(function (item, index) {
-    updateElementClass(item, 'reveal', checkWithinIndex(index, fullpageCurrentIndex));
-  });
-  console.log(checkWithinIndex(fullpageCurrentIndex, [0, 3]));
-  updateElementClass(getHeader, 'slim', checkWithinIndex(fullpageCurrentIndex, [1, 2]));
-  updateElementClass(getFooter, 'reveal', checkWithinIndex(fullpageCurrentIndex, 3));
-} // helper - update classes
+    function update_elements_class(currentIndex, totalPage) {
+      insertElementClass(getHeader, 'slim', checkIndex(currentIndex, [0, totalPage]), true);
+      insertElementClass(getFooter, 'reveal', checkIndex(currentIndex, totalPage));
+      getSection.forEach(function (item, index) {
+        insertElementClass(item, 'reveal', checkIndex(index, currentIndex));
+      });
+    } // update_elements_class - insert class to element
 
 
-var updateElementClass = function updateElementClass(element, className, func) {
-  if (func) {
-    element.classList.add(className);
-  } else {
-    element.classList.remove(className);
-  }
-};
+    function insertElementClass(element, className, func) {
+      var invert = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+      var output = func;
+      if (invert) output = !output;
 
-var checkOutsideIndex = function checkOutsideIndex(currentIndex, targetIndex) {
-  var detect = false;
-
-  if (_typeof(targetIndex) === 'object') {
-    targetIndex.forEach(function (item) {
-      if (currentIndex !== item) {
-        detect = true;
+      if (output) {
+        element.classList.add(className);
+      } else {
+        element.classList.remove(className);
       }
-    });
-    return detect;
-  } else {
-    return currentIndex !== targetIndex;
-  }
-};
+    } // update_elements_class - check slider index
 
-var checkWithinIndex = function checkWithinIndex(currentIndex, targetIndex) {
-  var detect = false;
 
-  if (_typeof(targetIndex) === 'object') {
-    targetIndex.forEach(function (item) {
-      if (currentIndex === item) {
-        detect = true;
+    function checkIndex(currentIndex, targetIndex) {
+      var detect = false;
+
+      if (_typeof(targetIndex) === 'object') {
+        targetIndex.forEach(function (item) {
+          if (currentIndex === item) detect = true;
+        });
+        return detect;
+      } else {
+        return currentIndex === targetIndex;
       }
-    });
-    return detect;
-  } else {
-    return currentIndex === targetIndex;
-  }
-}; // helper check if middle of slider transition
+    } // HOIST
 
 
-var slideTransition = false;
-[fullpageSlider, foodSlider].forEach(function (element) {
-  element.events.on('transitionStart', function () {
-    slideTransition = true;
-  });
-  element.events.on('transitionEnd', function () {
-    slideTransition = false;
-  });
-});
-/**
- * EASTER EGG
- */
-// update body background-color
+    function run_tiny_slider() {
+      // INIT SLIDERS
+      var fullpageSlider = (0, _tinySlider.tns)({
+        container: '#fullpage',
+        items: 1,
+        slideBy: 'page',
+        axis: 'vertical',
+        loop: false,
+        viewportMax: true,
+        controlsText: ['<span>PRE</span>', '<span>NEX</span>'],
+        speed: 400,
+        arrowKeys: true,
+        mouseDrag: true,
+        preventActionWhenRunning: true,
+        controls: false,
+        preventScrollOnTouch: "auto",
+        swipeAngle: 30
+      });
+      var foodSlider = (0, _tinySlider.tns)({
+        container: '.food-slide',
+        items: 1,
+        slideBy: 'page',
+        loop: true,
+        viewportMax: true,
+        controlsText: ['{', '}'],
+        speed: 400,
+        arrowKeys: true,
+        mouseDrag: true,
+        preventActionWhenRunning: true,
+        controls: false,
+        // preventScrollOnTouch: 'auto',
+        responsive: {
+          768: {
+            loop: false
+          }
+        }
+      }); // UPDATE SLIDER ELEMENTS CLASS
 
-function update_background(color) {
-  var body = document.querySelector('body');
-  body.style.backgroundColor = color;
-}
+      window.addEventListener('load', function (e) {
+        var fullpageCurrentIndex = fullpageSlider.getInfo().index;
+        var fullpageTotalPage = fullpageSlider.getInfo().pages - 1;
+        update_elements_class(fullpageCurrentIndex, fullpageTotalPage);
+      }); // UPDATE SLIDER ELEMENTS CLASS - ON SLIDER UPDATE
+
+      fullpageSlider.events.on('indexChanged', function (e) {
+        var fullpageCurrentIndex = e.index;
+        var fullpageTotalPage = e.pages - 1;
+        update_elements_class(fullpageCurrentIndex, fullpageTotalPage);
+      }); // CHECK SLIDER TRANSITION
+
+      var slideTransition = false;
+      [fullpageSlider, foodSlider].forEach(function (element) {
+        element.events.on('transitionStart', function () {
+          slideTransition = true;
+        });
+        element.events.on('transitionEnd', function () {
+          slideTransition = false;
+        });
+      }); // MOUSE WHEEL EVENT
+
+      document.addEventListener('wheel', function (e) {
+        // get slider info
+        var pageInfo = fullpageSlider.getInfo(),
+            pageIndexPrev = pageInfo.indexCached,
+            pageIndexCurrent = pageInfo.index;
+        var foodInfo = foodSlider.getInfo(),
+            foodIndexPrev = foodInfo.indexCached,
+            foodIndexCurrent = foodInfo.index,
+            foodTotalPages = foodInfo.pages; // wheel scroll interaction
+
+        if (e.deltaY > 0 && !slideTransition) {
+          if (pageIndexCurrent == 1 && foodIndexCurrent <= foodTotalPages - 1) {
+            foodSlider.goTo('next');
+          } else {
+            fullpageSlider.goTo('next');
+          }
+        } else {
+          if (pageIndexCurrent == 1 && foodIndexCurrent > 1) {
+            foodSlider.goTo(0);
+          } else {
+            fullpageSlider.goTo('prev');
+          }
+        }
+      });
+    }
+  } // easter_egg - update body background-color
+
+
+  _createClass(StreetfoodTinySlider, [{
+    key: "easter_egg_update_background",
+    value: function easter_egg_update_background(color) {
+      var body = document.querySelector('body');
+      body.style.backgroundColor = color;
+    }
+  }]);
+
+  return StreetfoodTinySlider;
+}();
+
+var _default = StreetfoodTinySlider;
+exports.default = _default;
 },{"../../node_modules/tiny-slider/src/tiny-slider":"node_modules/tiny-slider/src/tiny-slider.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
-
-require("./scss/_styles.scss");
 
 var _jquery = _interopRequireDefault(require("jquery"));
 
@@ -22312,14 +22322,38 @@ require("popper.js");
 
 require("../node_modules/bootstrap/dist/js/bootstrap");
 
+require("./scss/_styles.scss");
+
 var _Preloader = _interopRequireDefault(require("./js/Preloader"));
 
 var _StreetfoodTinySlider = _interopRequireDefault(require("./js/StreetfoodTinySlider"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var preloader = new _Preloader.default();
+/**
+ * load bootstrap
+ */
 
+/**
+ * load styling
+ */
+
+/**
+ * preloader
+ */
+var preloader = new _Preloader.default();
+/**
+ * custom tiny-slider
+ */
+
+// check if mobile & add classes, also activate slider
+var getBody = document.querySelector('body');
+
+if (window.matchMedia("(min-width: 769px)").matches) {
+  var street = new _StreetfoodTinySlider.default();
+} else {
+  getBody.classList.add('mobile');
+}
 /**
  * switch language, detect geolocation
  * @link https://www.w3schools.com/html/html5_geolocation.asp
@@ -22338,34 +22372,31 @@ var preloader = new _Preloader.default();
 // alert(language); //works IE/SAFARI/CHROME/FF
 
 /**
- * 
+ * waypoints
  */
-// import anime from '../node_modules/animejs/lib/anime.es';
-// animation classes
-var currentPage = 0;
-window.addEventListener('load', function (e) {
-  var currentPage = _StreetfoodTinySlider.default.fullpageSlider.getInfo().index; // console.log(currentPage);
-
-});
-
-_StreetfoodTinySlider.default.fullpageSlider.events.on('indexChanged', function (e) {
-  currentPage = e.index;
-  /* switch (currentPage) {
-    case 0:
-      console.log(0);
-      break;
-    case 1:
-      console.log(1);
-      break;
-    case 2:
-      console.log(2);
-      break;
-    case 3:
-      console.log(3);
-      break;
-  } */
-});
-},{"./scss/_styles.scss":"src/scss/_styles.scss","jquery":"node_modules/jquery/dist/jquery.js","popper.js":"node_modules/popper.js/dist/esm/popper.js","../node_modules/bootstrap/dist/js/bootstrap":"node_modules/bootstrap/dist/js/bootstrap.js","./js/Preloader":"src/js/Preloader.js","./js/StreetfoodTinySlider":"src/js/StreetfoodTinySlider.js"}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+// let currentPage = 0
+// window.addEventListener('load', e => {
+//   let currentPage = street.fullpageSlider.getInfo().index;
+//   // console.log(currentPage);
+// });
+// street.fullpageSlider.events.on('indexChanged', e => {
+//   currentPage = e.index;
+//   /* switch (currentPage) {
+//     case 0:
+//       console.log(0);
+//       break;
+//     case 1:
+//       console.log(1);
+//       break;
+//     case 2:
+//       console.log(2);
+//       break;
+//     case 3:
+//       console.log(3);
+//       break;
+//   } */
+// });
+},{"jquery":"node_modules/jquery/dist/jquery.js","popper.js":"node_modules/popper.js/dist/esm/popper.js","../node_modules/bootstrap/dist/js/bootstrap":"node_modules/bootstrap/dist/js/bootstrap.js","./scss/_styles.scss":"src/scss/_styles.scss","./js/Preloader":"src/js/Preloader.js","./js/StreetfoodTinySlider":"src/js/StreetfoodTinySlider.js"}],"../../../Users/Jaspery/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -22392,7 +22423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54158" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49780" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

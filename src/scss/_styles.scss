@@ -32,6 +32,14 @@ sans-serif;
 $font__body: 'Arial',
 sans-serif;
 
-@import './_fullpage';
+.body {
+  @include md {
+    overflow: hidden;
+  }
+}
+
+@import './_carousel_background';
+@import './_layout';
+// @import './_sizing';
 @import './_typo';
 @import './_decor';

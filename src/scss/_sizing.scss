@@ -1,0 +1,57 @@
+.masthead {
+  &__content {
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include md {
+      padding-left: 3rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &__intro {
+
+    @include md {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__partner {
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+
+    img {
+      padding-right: 1rem;
+      max-height: 64px;
+    }
+  }
+}
+
+.story {
+  &__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.voice {
+  &__title {
+    padding: 1rem;
+  }
+
+  &__cta {
+    padding: 1rem;
+  }
+}
+
+.footer {
+  padding: 1rem;
+
+  &__copyright {
+    p {
+      margin: 1rem;
+    }
+  }
+}

@@ -1,4 +1,11 @@
 .masthead {
+
+  // background-image: url(../assets/logo.png);
+  // background-repeat: no-repeat;
+  // background-position: left bottom;
+  // background-size: 20%;
+
+
   &__title {
     padding: 1.15rem 0;
     position: relative;
@@ -25,6 +32,7 @@
       transform: translateX(-110%);
     }
   }
+
   &__content p {
     margin: 1.45rem auto;
   }
@@ -53,24 +61,24 @@
       position: relative;
       z-index: 10;
 
-      border: 3px solid #000;
     }
   }
 
-  &__stripe {
-    position: absolute;
-    left: 3rem;
-    top: 1rem;
-    width: 100%;
-    height: 300px;
-    span {
-      display: block;
-      background-color: $color__red;
-      width: 800px;
-      height: 12px;
-      margin-bottom: 12px;
-    }
-  }
+  // &__stripe {
+  //   position: absolute;
+  //   left: 3rem;
+  //   top: 1rem;
+  //   width: 100%;
+  //   height: 300px;
+
+  //   span {
+  //     display: block;
+  //     background-color: $color__red;
+  //     width: 800px;
+  //     height: 12px;
+  //     margin-bottom: 12px;
+  //   }
+  // }
 }
 
 //temp
@@ -80,16 +88,24 @@
 
 //button 
 .btn-cta {
-  padding: 1rem 3rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  background-color: maroon;
-  border: 0;
+  padding: 8px 24px;
+  background-color: $color__darkred;
+  // border: 5px solid #333;
+  // border-radius: 0;
+  // border: 0;
+  border-color: #fff;
+  border-width: 4px;
   color: #fff;
+  
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
   &:hover,
   &:active {
+    background-color: $color__red;
     color: #fff;
-    background-color: red;
   }
 }
