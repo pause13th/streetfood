@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font__head;
+  letter-spacing: 1px;
+  font-size: 3rem;
+}
+
+.masthead {
+  h1 {
+    color: $color__blue;
+    font-weight: bold;
+    font-size: 2.85rem;
+  }
+
+}
+
+.food {
+  color: #fff;
+}
+
+.voice {
+  color: #fff;
+}
+
+.footer {
+  color: #fff;
+}

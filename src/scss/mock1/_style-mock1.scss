@@ -1,0 +1,76 @@
+$netflix-dark: #141414;
+
+// backgrounds and z-index
+/* 
+.header {
+  z-index: 100;
+}
+
+.masthead {
+  // backgrounds
+  background: url('https://images.pexels.com/photos/2155554/pexels-photo-2155554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    background-color: rgba(0, 0, 0, .6);
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+}
+
+.story {
+  background-color: #434343;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  &:before {
+    display: inline-block;<div class="my-slider">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+    position: absolute;
+    content: 'BTW';
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22rem;
+    opacity: .12;
+  }
+}
+
+.voice {
+
+  &__content--2 {
+    height: 420px;
+    overflow: hidden;
+
+    &:before {
+      display: inline-block;
+      background: url('https://images.pexels.com/photos/2155554/pexels-photo-2155554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat;
+      background-position: center center;
+      background-size: cover;
+      content: '';
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.footer {
+  &__before {
+    background-color: #888;
+  }
+  &__copyright {
+    background-color: #333;
+  }
+} */

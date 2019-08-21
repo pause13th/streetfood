@@ -1,0 +1,9 @@
+.header {
+
+  transition: background-color .3s ease;
+  background-color: rgba($netflix-dark, 0);
+
+  &.slim {
+    background-color: rgba($netflix-dark, 1);
+  }
+}
