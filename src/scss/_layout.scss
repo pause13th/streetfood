@@ -134,7 +134,7 @@ header {
     &__1 .food-slide__content {
 
       display: grid;
-      grid-template-rows: 1fr 1fr;
+      // grid-template-rows: 1fr 1fr;
 
 
       @include md {

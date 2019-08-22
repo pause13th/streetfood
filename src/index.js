@@ -22,23 +22,50 @@ let preloader = new Preloader();
 /**
  * custom tiny-slider
  */
-import StreetfoodTinySlider from './js/StreetfoodTinySlider';
+/* import StreetfoodTinySlider from './js/StreetfoodTinySlider';
 // check if mobile & add classes, also activate slider
 if (window.matchMedia("(min-width: 769px)").matches) {
   var street = new StreetfoodTinySlider();
-}
+} */
 
 
 /**
  * mobile version
  */
-import StreetfoodMobile from './js/StreetfoodMobile';
+/* import StreetfoodMobile from './js/StreetfoodMobile';
 let getBody = document.querySelector('body');
 if (window.matchMedia("(max-width: 768px").matches) {
   var streetMobile = new StreetfoodMobile();
   getBody.classList.add('mobile');
-}
+} */
 
+/**
+ * tiny-slider
+ */
+import {
+  tns
+} from "../node_modules/tiny-slider/src/tiny-slider";
+
+var foodSlider = tns({
+  container: '#food-slide',
+  items: 1,
+  slideBy: 'page',
+  loop: true,
+  autoHeight: true,
+  viewportMax: true,
+  controlsText: ['{', '}'],
+  speed: 400,
+  arrowKeys: true,
+  mouseDrag: true,
+  preventActionWhenRunning: true,
+  controls: false,
+  preventScrollOnTouch: 'auto',
+  // responsive: {
+  //   768: {
+  //     loop: false,
+  //   }
+  // }
+});
 /**
  * switch language, detect geolocation
  * @link https://www.w3schools.com/html/html5_geolocation.asp
