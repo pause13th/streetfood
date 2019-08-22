@@ -38,8 +38,32 @@ sans-serif;
   }
 }
 
+.masthead__video {
+  position: relative;
+  padding-bottom: 52.8%;
+  padding-top: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 0;
+  overflow: hidden;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 @import './_carousel_background';
 @import './_layout';
-// @import './_sizing';
+@import './_sizing';
+@import './_mobile';
+
+
 @import './_typo';
 @import './_decor';

@@ -9,7 +9,9 @@ body {
 main {
   #fullpage {
     section {
-      height: 100vh;
+      @include md {
+        height: 100vh;
+      }
     }
 
     .masthead {
@@ -17,7 +19,7 @@ main {
 
       &__video {
         background-color: cyan;
-        background: url(https://images.pexels.com/photos/1253245/pexels-photo-1253245.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260) no-repeat;
+        background: url('../assets/masthead.jpg') no-repeat;
         background-size: cover;
         background-position: center center;
       }
@@ -38,7 +40,10 @@ main {
 
   .food-slide {
     &>div {
-      height: 100vh;
+      @include md {
+        height: 100vh;
+
+      }
     }
   }
 }

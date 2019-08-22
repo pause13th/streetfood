@@ -24,13 +24,20 @@ let preloader = new Preloader();
  */
 import StreetfoodTinySlider from './js/StreetfoodTinySlider';
 // check if mobile & add classes, also activate slider
-let getBody = document.querySelector('body');
 if (window.matchMedia("(min-width: 769px)").matches) {
   var street = new StreetfoodTinySlider();
-} else {
-  getBody.classList.add('mobile');
 }
 
+
+/**
+ * mobile version
+ */
+import StreetfoodMobile from './js/StreetfoodMobile';
+let getBody = document.querySelector('body');
+if (window.matchMedia("(max-width: 768px").matches) {
+  var streetMobile = new StreetfoodMobile();
+  getBody.classList.add('mobile');
+}
 
 /**
  * switch language, detect geolocation

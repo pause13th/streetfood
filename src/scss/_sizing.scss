@@ -1,4 +1,12 @@
+section {
+  padding: 1.45rem 0;
+}
+
 .masthead {
+  &__title {
+    padding: 0;
+  }
+
   &__content {
 
     padding-left: 15px;
@@ -19,12 +27,16 @@
   }
 
   &__partner {
-    padding-left: 3rem;
-    padding-bottom: 1rem;
 
-    img {
-      padding-right: 1rem;
-      max-height: 64px;
+    @include md {
+
+      padding-left: 3rem;
+      padding-bottom: 1rem;
+
+      img {
+        padding-right: 1rem;
+        max-height: 64px;
+      }
     }
   }
 }
