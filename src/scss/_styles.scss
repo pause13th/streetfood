@@ -37,7 +37,7 @@ sans-serif;
     overflow: hidden;
   }
 }
-
+/* 
 .masthead__video {
   position: relative;
   padding-bottom: 52.8%;
@@ -58,11 +58,11 @@ sans-serif;
   }
 }
 
-
+ */
 @import './_carousel_background';
 @import './_layout';
 @import './_sizing';
-@import './_mobile';
+// @import './_mobile';
 
 
 @import './_typo';

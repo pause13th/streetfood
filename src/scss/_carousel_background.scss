@@ -9,8 +9,10 @@ body {
 main {
   #fullpage {
     section {
-      @include md {
-        height: 100vh;
+      height: auto;
+
+      @include xl {
+        min-height: 95vh;
       }
     }
 
@@ -41,7 +43,7 @@ main {
   .food-slide {
     &>div {
       @include md {
-        height: 100vh;
+        // height: 100vh;
 
       }
     }
@@ -49,7 +51,7 @@ main {
 }
 
 // tiny-slider
-#fullpage-ow {
+/* #fullpage-ow {
   &.tns-outer {
     position: relative;
 
@@ -89,7 +91,7 @@ main {
       }
     }
   }
-}
+} */
 
 #food-slide-ow {
   &.tns-outer {

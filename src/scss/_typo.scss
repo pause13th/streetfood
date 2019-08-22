@@ -7,41 +7,77 @@ h6 {
   font-family: $font__head;
   letter-spacing: 1px;
   font-size: 3rem;
+  line-height: 1;
+}
+
+p {
+  font-family: $font__body;
+  text-align: center;
+  font-weight: bold;
+
+  font-size: 1rem;
+
+  @include md {
+    font-size: 1rem;
+  }
+
+  @include xl {
+    font-size: 1rem;
+  }
+}
+
+h2 {
+  @include md {
+    font-size: 6rem;
+  }
 }
 
 .masthead {
-
   h1 {
-    font-weight: bold;
     font-size: 2.4rem;
-    margin: 0;
     color: $color__blue;
-    text-align: center;
-  }
-
-  p {
-    font-family: $font__body;
-    text-align: center;
+    margin: 0;
 
     @include md {
-      font-weight: bold;
+      font-size: 2.6rem;
+    }
 
+    @include lg {
+      font-size: 3.0rem;
     }
   }
 
-  &__content p {
+  p {
     margin: 1rem auto;
+
+    @include md {
+      text-align: left;
+    }
   }
 
+  &__cta {
+    @include md {
+      text-align: left;
+    }
+  }
 }
 
 .food {
   color: #fff;
 
   h2 {
-    font-size: 2.2rem;
     text-align: center;
-    margin: 1rem auto;
+
+  }
+}
+
+.story {
+  h2 {
+    color: $color__red;
+  }
+
+  p {
+    text-align: justify;
   }
 }
 
@@ -49,10 +85,15 @@ h6 {
   color: #fff;
 
   h2 {
-    font-size: 2rem;
-
     @include md {
-      font-size: 8.2rem;
+      font-size: 8rem;
+      text-align: left;
+    }
+  }
+
+  p {
+    @include md {
+      text-align: left;
     }
   }
 }

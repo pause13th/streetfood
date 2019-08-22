@@ -1,8 +1,23 @@
 section {
   padding: 1.45rem 0;
+
+  text-align: center;
+
+  @include md {
+    text-align: left;
+
+  }
 }
 
 .masthead {
+  padding: 0;
+  padding-top: 200px;
+
+  @include md {
+    padding-top: 0;
+  }
+
+
   &__title {
     padding: 0;
   }

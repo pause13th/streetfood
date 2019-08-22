@@ -66,36 +66,41 @@ header {
   grid-template-columns: 1fr;
 
   @include md {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(1fr, 220px) 1fr minmax(1fr, 220px);
-  }
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
 
-  &__video {
-    grid-row: 1/2;
+    padding-top: 200px;
+  }
+  @include xl {
+    padding-top: 0;
+
   }
 
   &__content {
     margin: 1rem auto;
+    @include md {
+      align-self: end;
+      padding-bottom: 3rem;
+      padding-top: 200px;
+    }
   }
 
-  @include md {
+  &__video {
+    grid-row: 1/2;
 
-    &__content {
-      align-self: center;
-      grid-column: 1/2;
-      grid-row: 2/3;
-    }
-
-    &__partner {
-      grid-column: 1/2;
-      grid-row: 2/3;
-      justify-self: start;
-    }
-
-    &__video {
+    @include md {
       grid-column: 2/3;
-      grid-row: 1/3;
+      // grid-row: 1/3;
       align-self: stretch;
+
+      height: 100%;
+      margin: 0;
+    }
+
+    .video-container {
+      @include md {
+        display: none;
+      }
     }
   }
 
@@ -105,21 +110,7 @@ header {
 
 }
 
-.food {
-  position: relative;
-
-  &__title {
-
-    @include md {
-
-      position: absolute;
-      left: 50%;
-      top: 10%;
-      transform: translateX(-50%);
-      z-index: 10;
-    }
-  }
-}
+.food {}
 
 #food-slide {
   .food-slide {
@@ -127,43 +118,15 @@ header {
       grid-row: 1/2;
     }
 
-    // mobile
-    &__4 .food-slide__content,
-    &__3 .food-slide__content,
-    &__2 .food-slide__content,
-    &__1 .food-slide__content {
-
+    &__content {
       display: grid;
-      // grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
 
+      justify-items: center;
+      align-items: center;
 
       @include md {
-
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        align-content: center;
-
-        h3 {
-          grid-column: 4/8;
-          grid-row: 1/2;
-
-          position: relative;
-          z-index: 10;
-        }
-
-        p {
-          grid-column: 6/9;
-          grid-row: 1/2;
-        }
-
-        img {
-          grid-column: 2/6;
-          grid-row: 1/2;
-
-          position: relative;
-          z-index: 0;
-        }
+        grid-template-columns: 1fr 1fr;
       }
     }
   }
@@ -180,10 +143,10 @@ header {
 
   &__columns {
     text-align: left;
-    max-width: 780px;
+
     margin: 2rem auto;
     column-count: 1;
-    column-gap: 20px;
+    column-gap: 6rem;
 
     @include md {
       column-count: 2;

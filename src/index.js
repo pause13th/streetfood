@@ -39,6 +39,25 @@ if (window.matchMedia("(max-width: 768px").matches) {
   getBody.classList.add('mobile');
 } */
 
+
+/**
+ * header slim
+ */
+['DOMContentLoaded', 'scroll'].forEach((evt) => {
+  document.addEventListener(evt, (e) => {
+    let scrollTop = document.scrollingElement.scrollTop;
+    let getHeader = document.querySelector('.header');
+    let getMasthead = document.querySelector('.masthead');
+    if (scrollTop > 20) {
+      getHeader.classList.add('slim');
+      getMasthead.classList.add('slim');
+    } else {
+      getHeader.classList.remove('slim');
+      getMasthead.classList.remove('slim');
+    }
+  });
+});
+
 /**
  * tiny-slider
  */
@@ -52,7 +71,7 @@ var foodSlider = tns({
   slideBy: 'page',
   loop: true,
   autoHeight: true,
-  viewportMax: true,
+  // viewportMax: true,
   controlsText: ['{', '}'],
   speed: 400,
   arrowKeys: true,
@@ -60,11 +79,11 @@ var foodSlider = tns({
   preventActionWhenRunning: true,
   controls: false,
   preventScrollOnTouch: 'auto',
-  // responsive: {
-  //   768: {
-  //     loop: false,
-  //   }
-  // }
+  responsive: {
+    768: {
+      loop: false,
+    }
+  }
 });
 /**
  * switch language, detect geolocation
