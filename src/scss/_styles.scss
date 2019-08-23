@@ -2,13 +2,13 @@
 @import '../../node_modules/tiny-slider/dist/tiny-slider';
 
 @font-face {
-  font-family: "Insanibu";
-  src: url('../assets/Insanibu.eot');
-  src: url('../assets/Insanibu.eot?#iefix') format('embedded-opentype'),
-    url('../assets/Insanibu.woff2') format('woff2'),
-    url('../assets/Insanibu.woff') format('font-woff'),
-    url('../assets/Insanibu.ttf') format('truetype'),
-    url('../assets/Insanibu.svg#svgFontName') format('svg');
+  font-family: "Insanibc";
+  src: url('../fonts/Insanibc.eot');
+  src: url('../fonts/Insanibc.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Insanibc.woff2') format('woff2'),
+    url('../fonts/Insanibc.woff') format('font-woff'),
+    url('../fonts/Insanibc.ttf') format('truetype'),
+    url('../fonts/Insanibc.svg#svgFontName') format('svg');
 }
 
 // @import url('https://fonts.googleapis.com/css?family=Asap:700|Fredoka+One&display=swap');
@@ -21,13 +21,14 @@
 @import './_mixin';
 
 // variables
+$color__netflix: #141414;
 $color__main: #000000;
 $color__blue: #010065;
 $color__yellow: #ffcc00;
 $color__red: #ff0000;
 $color__darkred: #CC0001;
 
-$font__head: 'Insanibu',
+$font__head: 'Insanibc',
 sans-serif;
 $font__body: 'Arial',
 sans-serif;
@@ -37,13 +38,12 @@ sans-serif;
     overflow: hidden;
   }
 }
-/* 
-.masthead__video {
+
+
+.video-container {
   position: relative;
-  padding-bottom: 52.8%;
+  padding-bottom: 56.8%;
   padding-top: 0;
-  margin-left: 15px;
-  margin-right: 15px;
   height: 0;
   overflow: hidden;
 
@@ -57,13 +57,12 @@ sans-serif;
     height: 100%;
   }
 }
+.modal-content {
+  background-color: transparent;
+  border-radius: 0;
+}
 
- */
 @import './_carousel_background';
 @import './_layout';
-@import './_sizing';
-// @import './_mobile';
-
-
 @import './_typo';
 @import './_decor';

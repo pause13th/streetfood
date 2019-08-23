@@ -13,16 +13,15 @@ h6 {
 p {
   font-family: $font__body;
   text-align: center;
-  font-weight: bold;
 
   font-size: 1rem;
 
   @include md {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   @include xl {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -32,18 +31,30 @@ h2 {
   }
 }
 
+h2,
+h3,
+h4 {
+  user-select: none;
+}
+
 .masthead {
   h1 {
     font-size: 2.4rem;
     color: $color__blue;
     margin: 0;
+    text-align: center;
 
     @include md {
-      font-size: 2.6rem;
+      font-size: 2.5rem;
+      text-align: left;
     }
 
-    @include lg {
-      font-size: 3.0rem;
+    @include xl {
+      font-size: 3.1rem;
+    }
+
+    @include xxl {
+      font-size: 3.8rem;
     }
   }
 
@@ -52,6 +63,10 @@ h2 {
 
     @include md {
       text-align: left;
+    }
+
+    @include lg {
+      padding-right: 3rem;
     }
   }
 
@@ -67,7 +82,37 @@ h2 {
 
   h2 {
     text-align: center;
+  }
 
+  p {
+    @include md {
+      text-align: left;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    text-align: center;
+
+    @include md {
+      text-align: left;
+      font-size: 3.6rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  h4 {
+    color: $color__red;
+    font-size: 2.2rem;
+
+    @include md {
+      font-size: 2.8rem;
+    }
+
+    @include lg {
+      font-size: 3.4rem;
+    }
   }
 }
 
@@ -77,7 +122,8 @@ h2 {
   }
 
   p {
-    text-align: justify;
+    text-align: left;
+    font-weight: bold;
   }
 }
 
@@ -86,18 +132,37 @@ h2 {
 
   h2 {
     @include md {
-      font-size: 8rem;
+      font-size: 4.4rem;
       text-align: left;
+    }
+
+    @include lg {
+      font-size: 5.2rem;
+    }
+
+    @include xl {
+      font-size: 5.6rem;
+    }
+    @include xxl {
+      font-size: 7.2rem;
     }
   }
 
   p {
     @include md {
-      text-align: left;
+      font-size: 1.5rem;
     }
   }
 }
 
 .footer {
   color: #fff;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+
+  p {
+    font-family: $font__head;
+  }
 }

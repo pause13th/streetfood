@@ -1,136 +1,30 @@
-body {
-  background-color: maroon;
-  background-image: url('../assets/hidden.png');
-  background-repeat: no-repeat;
-  background-position: 80% bottom;
-  background-size: 20%;
-}
-
-main {
-  #fullpage {
-    section {
-      height: auto;
-
-      @include xl {
-        min-height: 95vh;
-      }
-    }
-
-    .masthead {
-      background-color: #fff;
-
-      &__video {
-        background-color: cyan;
-        background: url('../assets/masthead.jpg') no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-    }
-
-    .food {
-      background-color: $color__blue;
-    }
-
-    .story {
-      background-color: $color__yellow;
-    }
-
-    .voice {
-      background-color: $color__red;
-    }
-  }
-
-  .food-slide {
-    &>div {
-      @include md {
-        // height: 100vh;
-
-      }
-    }
-  }
-}
-
-// tiny-slider
-/* #fullpage-ow {
-  &.tns-outer {
-    position: relative;
-
-    &>.tns {
-      &-nav {
-        position: absolute;
-        right: 0;
-        top: 0;
-        // transform: translateY(-50%);
-        height: 100%;
-        z-index: 1000;
-
-        display: grid;
-        grid-template-rows: auto;
-        box-shadow: -3px 3px 5px rgba(0, 0, 0, .2);
-
-        button {
-          margin: 0;
-          padding: 4px;
-          border: 0;
-
-          transition: all .4s ease-out;
-          background-color: $color__red;
-
-          @include md {
-            padding: 12px;
-          }
-
-          &.tns-nav-active {
-            background-color: $color__yellow;
-          }
-
-          &:hover {
-            background-color: #010066;
-          }
-        }
-      }
-    }
-  }
-} */
-
 #food-slide-ow {
   &.tns-outer {
     position: relative;
 
     &>.tns {
-      &-controls {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 50;
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
 
       &-nav {
         position: absolute;
         left: 50%;
-        bottom: 5%;
-        transform: translateX(-50%);
+        bottom: 3rem;
+        transform: translateX(-50%) translateY(100%);
         z-index: 100;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
 
         button {
           margin: 0 1rem;
-          padding: 4px;
+          padding: 12px;
           border-radius: 1rem;
-          border: 3px solid #fff;
-
+          border: 0;
           transition: all .4s ease-out;
-          background-color: $color__red;
-          border-color: $color__blue;
+          background-color: rgba(255, 255, 255, .3);
 
           &.tns-nav-active {
-            background-color: $color__red;
-            border-color: #fff;
+            background-color: rgba(255, 255, 255, .95);
           }
         }
       }

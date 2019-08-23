@@ -4,8 +4,7 @@
 import jQuery from 'jquery';
 import 'popper.js';
 import '../node_modules/bootstrap/dist/js/bootstrap';
-
-
+import '../node_modules/font-awesome/css/font-awesome';
 /**
  * load styling
  */
@@ -46,6 +45,9 @@ if (window.matchMedia("(max-width: 768px").matches) {
 ['DOMContentLoaded', 'scroll'].forEach((evt) => {
   document.addEventListener(evt, (e) => {
     let scrollTop = document.scrollingElement.scrollTop;
+    let totalHeight = document.scrollingElement.scrollHeight;
+    let lastSectionHeight = document.querySelector('.voice');
+    lastSectionHeight = lastSectionHeight.offsetHeight;
     let getHeader = document.querySelector('.header');
     let getMasthead = document.querySelector('.masthead');
     if (scrollTop > 20) {
@@ -54,6 +56,23 @@ if (window.matchMedia("(max-width: 768px").matches) {
     } else {
       getHeader.classList.remove('slim');
       getMasthead.classList.remove('slim');
+    }
+  });
+});
+/**
+ * footer reveal
+ */
+['DOMContentLoaded', 'scroll'].forEach((evt) => {
+  document.addEventListener(evt, (e) => {
+    let scrollTop = document.scrollingElement.scrollTop;
+    let totalHeight = document.scrollingElement.scrollHeight;
+    let lastSectionHeight = document.querySelector('.voice');
+    lastSectionHeight = lastSectionHeight.offsetHeight;
+    let getFooter = document.querySelector('.footer');
+    if (scrollTop > totalHeight - lastSectionHeight - 120) {
+      getFooter.classList.add('reveal');
+    } else {
+      getFooter.classList.remove('reveal');
     }
   });
 });
@@ -68,23 +87,24 @@ import {
 var foodSlider = tns({
   container: '#food-slide',
   items: 1,
-  slideBy: 'page',
+  // slideBy: 'page',
   loop: true,
-  autoHeight: true,
+  // autoHeight: true,
   // viewportMax: true,
-  controlsText: ['{', '}'],
+  // controlsText: ['{', '}'],
   speed: 400,
   arrowKeys: true,
   mouseDrag: true,
   preventActionWhenRunning: true,
   controls: false,
   preventScrollOnTouch: 'auto',
-  responsive: {
-    768: {
-      loop: false,
-    }
-  }
+  // responsive: {
+  //   768: {
+  //     loop: false,
+  //   }
+  // }
 });
+
 /**
  * switch language, detect geolocation
  * @link https://www.w3schools.com/html/html5_geolocation.asp
@@ -108,6 +128,55 @@ var foodSlider = tns({
 /**
  * waypoints
  */
+import waypoints from '../node_modules/waypoints/lib/noframework.waypoints';
+
+var point1 = new Waypoint({
+  element: document.querySelector('.masthead__title'),
+  handler: function (direction) {
+    toggleAnime(this.element);
+  },
+  offset: '80px',
+})
+
+var point2 = new Waypoint({
+  element: document.querySelector('.masthead__stripe'),
+  handler: function (direction) {
+    toggleAnime(this.element);
+  },
+  offset: '50%',
+});
+
+var point3 = new Waypoint({
+  element: document.querySelector('.food__title'),
+  handler: function (direction) {
+    toggleAnime(this.element);
+  },
+  offset: '50%',
+});
+
+var point4 = new Waypoint({
+  element: document.querySelector('.story__content'),
+  handler: function (direction) {
+    toggleAnime(this.element);
+  },
+  offset: '85%',
+});
+
+var point5 = new Waypoint({
+  element: document.querySelector('.voice__title'),
+  handler: function (direction) {
+    toggleAnime(this.element);
+  },
+  offset: '85%',
+});
+
+function toggleAnime(ele) {
+  if (!ele.classList.contains('anime')) {
+    ele.classList.add('anime');
+  } else {
+    ele.classList.remove('anime');
+  }
+}
 // let currentPage = 0
 
 // window.addEventListener('load', e => {
