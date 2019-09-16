@@ -1,0 +1,50 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap';
+
+// @import '../../node_modules/tiny-slider/dist/tiny-slider';
+
+@import './Preloader';
+@import './_defaults';
+@import './_mixin';
+@import './_variables';
+
+.body {
+  @include md {
+    overflow: hidden;
+  }
+
+}
+
+@import './match/_tournament';
+
+
+
+body {
+  background-color: $color__blue;
+  color: #fff;
+
+  h1, h2 {
+    text-align: center;
+  }
+}
+.tournament-bracket__round--gold {
+
+  .tournament-bracket {
+    &__match {
+      background-color: red;
+    }
+  }
+}
+
+.tournament-bracket__match {
+  display: block;
+}
+.match {
+  &__name {
+    display: block;
+    width: 100%;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.45rem;
+  }
+}

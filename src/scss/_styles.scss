@@ -11,27 +11,10 @@
     url('../fonts/Insanibc.svg#svgFontName') format('svg');
 }
 
-// @import url('https://fonts.googleapis.com/css?family=Asap:700|Fredoka+One&display=swap');
-// font-family: 'Fredoka One', cursive;
-// font-family: 'Asap', sans-serif;
-
 @import './Preloader';
-
 @import './_defaults';
 @import './_mixin';
-
-// variables
-$color__netflix: #141414;
-$color__main: #000000;
-$color__blue: #010065;
-$color__yellow: #ffcc00;
-$color__red: #ff0000;
-$color__darkred: #CC0001;
-
-$font__head: 'Insanibc',
-sans-serif;
-$font__body: 'Arial',
-sans-serif;
+@import './_variables';
 
 .body {
   @include md {
@@ -66,3 +49,15 @@ sans-serif;
 @import './_layout';
 @import './_typo';
 @import './_decor';
+
+
+// iframe for open map
+#fl-layout-header {
+  display: none !important;
+}
+
+.whereto {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}

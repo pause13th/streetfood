@@ -7,3 +7,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+@font-face {
+  font-family: "Insanibc";
+  src: url('../fonts/Insanibc.eot');
+  src: url('../fonts/Insanibc.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Insanibc.woff2') format('woff2'),
+    url('../fonts/Insanibc.woff') format('font-woff'),
+    url('../fonts/Insanibc.ttf') format('truetype'),
+    url('../fonts/Insanibc.svg#svgFontName') format('svg');
+}

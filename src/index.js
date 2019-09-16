@@ -4,7 +4,8 @@
 import jQuery from 'jquery';
 import 'popper.js';
 import '../node_modules/bootstrap/dist/js/bootstrap';
-import '../node_modules/font-awesome/css/font-awesome';
+// import '../node_modules/font-awesome/css/font-awesome';
+
 /**
  * load styling
  */
@@ -201,3 +202,4 @@ function toggleAnime(ele) {
 //       break;
 //   } */
 // });
+
