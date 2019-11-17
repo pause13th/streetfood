@@ -60,4 +60,26 @@
   display: grid;
   justify-items: center;
   align-items: center;
+
+  &__title {
+    color: #fff;
+    text-align: center;
+    margin: 0 1rem;
+  }
+
+  &__content {
+    color: #fff;
+    text-align: center;
+    margin: 0 1rem;
+
+    a {
+      color: $color__yellow;
+      transition: color .3s ease;
+      &:hover,
+      &:active {
+        color: $color__red;
+        text-decoration: none;
+      }
+    }
+  }
 }
